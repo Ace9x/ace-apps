@@ -1,96 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ace Apps — truck-safe tools, dispatch, and an AI-run builder office. Home of RigRoute.">
-  <meta name="theme-color" content="#0b1220">
-  <title>Ace Apps — RigRoute and more</title>
-  <!-- Custom domain: add CNAME file + DNS when ready. This site is GitHub Pages–ready. -->
-  <style>
-    :root { color-scheme: dark; --bg:#0b1220; --card:#121a2b; --text:#e8eefc; --muted:#9aa8c7; --accent:#5b8cff; --line:#243049; }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background:var(--bg); color:var(--text); line-height:1.5; }
-    a { color:var(--accent); text-decoration:none; }
-    a:hover { text-decoration:underline; }
-    .wrap { max-width:880px; margin:0 auto; padding:32px 20px 64px; }
-    header { margin-bottom:28px; }
-    .badge { display:inline-block; font-size:12px; letter-spacing:.04em; text-transform:uppercase; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:4px 10px; margin-bottom:12px; }
-    h1 { font-size:clamp(1.8rem, 4vw, 2.4rem); line-height:1.15; margin:0 0 10px; }
-    .lead { color:var(--muted); font-size:1.05rem; margin:0 0 18px; max-width:40rem; }
-    .cta { display:flex; flex-wrap:wrap; gap:10px; }
-    .btn { display:inline-block; background:var(--accent); color:#081018; font-weight:700; padding:10px 14px; border-radius:10px; }
-    .btn.secondary { background:transparent; color:var(--text); border:1px solid var(--line); }
-    .btn:hover { text-decoration:none; filter:brightness(1.05); }
-    section { margin-top:36px; }
-    h2 { font-size:1.15rem; margin:0 0 12px; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
-    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; }
-    .card h3 { margin:0 0 6px; font-size:1rem; }
-    .card p { margin:0; color:var(--muted); font-size:.92rem; }
-    .meta { font-size:.85rem; color:var(--muted); margin-top:10px; }
-    footer { margin-top:48px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:.85rem; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ace Apps — RigRoute, truck-safe GPS for drivers</title>
+<meta name="description" content="Ace Apps builds RigRoute, a free truck-safe GPS, plus dispatch services, EdgePro and an AI-run office. 41 drivers on day one.">
+<meta name="theme-color" content="#000000">
+<link rel="preload" href="img/map.webp" as="image">
+<style>
+:root{--bg:#000;--s1:#0f0f10;--s2:#1a1a1c;--line:#2a2a2d;--tx:#fff;--mu:#a1a1a6;--ac:#06c167;--r:24px;
+--f:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:16px/1.55 var(--f);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block;height:auto}
+.w{max-width:1160px;margin:auto;padding:0 20px}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:#fff;color:#000;padding:8px 12px;border-radius:8px;z-index:9}
+nav{position:sticky;top:0;z-index:5;background:rgba(0,0,0,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;font-size:20px;letter-spacing:-.02em;text-decoration:none}.logo b{color:var(--ac)}
+nav ul{display:flex;gap:22px;list-style:none;padding:0}nav ul a{text-decoration:none;color:var(--mu);font-weight:500}nav ul a:hover{color:#fff}
+@media(max-width:720px){nav ul li:not(:last-child){display:none}}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}.b1{background:#fff;color:#000}.b2{background:var(--s2);color:#fff;border:1px solid var(--line)}.sm{min-height:40px;padding:0 18px;font-size:14px}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--ac);outline-offset:3px}
+.hero{padding:56px 0 40px;overflow:hidden}
+.hero .w{display:grid;gap:40px;align-items:center}
+@media(min-width:900px){.hero .w{grid-template-columns:1.15fr .85fr}.hero{padding:96px 0 72px}}
+.tag{display:inline-flex;gap:8px;align-items:center;font-size:14px;font-weight:600;padding:6px 14px;border-radius:999px;background:var(--s2);border:1px solid var(--line)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ac);box-shadow:0 0 0 4px rgba(6,193,103,.2)}
+h1{font-size:clamp(44px,8.4vw,92px);line-height:.98;letter-spacing:-.045em;font-weight:800;margin:20px 0}
+h1 em{font-style:normal;color:var(--ac)}
+.lead{font-size:clamp(18px,2.2vw,21px);color:var(--mu);max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.phone{position:relative;max-width:330px;margin:auto;border-radius:44px;padding:10px;background:#1c1c1e;border:1px solid #333;box-shadow:0 40px 120px -20px rgba(6,193,103,.35)}
+.phone img{border-radius:34px;aspect-ratio:560/1211;width:100%}
+.sheet{position:absolute;left:-18px;right:-18px;bottom:28px;background:#fff;color:#000;border-radius:22px;padding:16px 18px;box-shadow:0 20px 50px rgba(0,0,0,.5);animation:up .9s .3s cubic-bezier(.2,.8,.2,1) both}
+.sheet small{color:#545454;font-weight:600}.sheet strong{display:block;font-size:19px;letter-spacing:-.02em}
+.sheet .row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.go{background:#000;color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:14px;white-space:nowrap}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:8px}
+@media(min-width:720px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stats div{background:var(--s1);padding:26px 22px}.stats b{display:block;font-size:clamp(34px,5vw,52px);letter-spacing:-.04em;line-height:1}.stats span{color:var(--mu);font-size:14px}
+section{padding:72px 0}
+h2{font-size:clamp(34px,5.6vw,60px);letter-spacing:-.04em;line-height:1.02;font-weight:800;max-width:14em}
+.kick{color:var(--ac);font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+.bento{display:grid;gap:14px;margin-top:40px}
+@media(min-width:800px){.bento{grid-template-columns:repeat(6,1fr)}.c2{grid-column:span 2}.c3{grid-column:span 3}.c4{grid-column:span 4}}
+.card{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:26px;overflow:hidden;position:relative;transition:border-color .3s,transform .3s}
+.card:hover{border-color:#444;transform:translateY(-3px)}
+.card h3{font-size:22px;letter-spacing:-.02em;margin-bottom:6px}.card p{color:var(--mu)}
+.card .shot{margin:22px auto -60px;max-width:220px;border-radius:26px;border:6px solid #1c1c1e}
+.card.light{background:#fff;color:#000;border-color:#fff}.card.light p{color:#545454}
+.ico{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--s2);margin-bottom:18px}
+.ico svg{width:22px;height:22px;stroke:var(--ac);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.light .ico{background:#f3f3f3}.light .ico svg{stroke:#000}
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:36px 20px 12px;margin:0 -20px}
+.strip img{flex:0 0 210px;scroll-snap-align:center;border-radius:26px;border:6px solid #1c1c1e}
+.foot-cta{background:#fff;color:#000;border-radius:32px;padding:clamp(32px,6vw,72px);display:grid;gap:22px}
+.foot-cta h2{max-width:none}.foot-cta p{color:#545454;font-size:18px}
+footer{padding:36px 0 60px;color:var(--mu);font-size:14px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="badge">Ace Apps · Queens, NY</div>
-      <h1>Tools for truck drivers and the operators who keep freight moving.</h1>
-      <p class="lead">Ace Apps builds free, practical software starting with <strong>RigRoute</strong> — truck-safe GPS for real streets — plus dispatch workflows and an AI-assisted builder office. Solo founder. Pay-itself culture.</p>
-      <div class="cta">
-        <a class="btn" href="https://ace9x.github.io/truckers-gps/">Open RigRoute</a>
-        <a class="btn secondary" href="mailto:adjrodriguez94@gmail.com">Email us</a>
-      </div>
-    </header>
+<a class="skip" href="#main">Skip to content</a>
+<nav aria-label="Main"><div class="w"><a class="logo" href="#">Ace<b>.</b>Apps</a>
+<ul><li><a href="#rigroute">RigRoute</a></li><li><a href="#more">Services</a></li><li><a href="#office">AI office</a></li><li><a class="btn b1 sm" href="https://ace9x.github.io/truckers-gps/">Open RigRoute</a></li></ul></div></nav>
+<main id="main">
+<header class="hero"><div class="w">
+<div>
+<span class="tag"><span class="dot" aria-hidden="true"></span>Live now · free for drivers</span>
+<h1>The GPS that knows you're driving a <em>truck.</em></h1>
+<p class="lead">RigRoute routes around low bridges, tight turns and no-truck streets, sized to your rig. It works in your phone's browser. No account, no download, no charge.</p>
+<div class="cta"><a class="btn b1" href="https://ace9x.github.io/truckers-gps/">Start driving free →</a><a class="btn b2" href="mailto:adjrodriguez94@gmail.com">Talk to the founder</a></div>
+</div>
+<div class="phone"><img src="img/map.webp" width="560" height="1211" alt="RigRoute map screen at night showing truck routes across New York City">
+<div class="sheet" role="presentation"><small>Routing for Semi · 13′6″ · 80,000 lb</small><div class="row"><strong>Truck-safe route ready</strong><span class="go">Start</span></div></div></div>
+</div></header>
 
-    <section>
-      <h2>Products</h2>
-      <div class="grid">
-        <article class="card">
-          <h3><a href="https://ace9x.github.io/truckers-gps/">RigRoute</a></h3>
-          <p>Free guest-first truck GPS: truck-aware local routing, Switch/Keep, HOS helper (informational, not a certified ELD), shared hazards, Ask RigRoute AI help.</p>
-          <p class="meta">Lead product · Live on GitHub Pages</p>
-        </article>
-        <article class="card">
-          <h3>Dispatch</h3>
-          <p>Hands-on dispatch is the operating business behind the stack — matching work, schedules, and driver reality.</p>
-          <p class="meta">Main money-maker today</p>
-        </article>
-        <article class="card">
-          <h3>EdgePro</h3>
-          <p>Sports research desk tooling used inside the Ace Apps operator office.</p>
-          <p class="meta">Portfolio product</p>
-        </article>
-        <article class="card">
-          <h3>Poker Dealer Trainer</h3>
-          <p>Dealer training covering major poker games, built for practice and speed.</p>
-          <p class="meta">Portfolio product</p>
-        </article>
-      </div>
-    </section>
+<div class="w rv"><div class="stats" role="list">
+<div role="listitem"><b>41</b><span>drivers on day one</span></div>
+<div role="listitem"><b>48</b><span>questions to Ask RigRoute</span></div>
+<div role="listitem"><b>$0</b><span>for drivers, no account</span></div>
+<div role="listitem"><b>2</b><span>phones QA'd, every screen</span></div>
+</div><p style="color:var(--mu);font-size:13px;margin-top:10px">Day-one numbers from our own analytics, Nov 4, 2026. Tracking began that day.</p></div>
 
-    <section>
-      <h2>Founder</h2>
-      <div class="card">
-        <h3>Fan Rodriguez</h3>
-        <p>Based in Far Rockaway, Queens. Background in tech sales (T-Mobile), operations management, trucking contracts and daily schedules, and dispatch at Mitchell’s Logistics (as Anthony). Builds with an AI bot-run office so a solo founder can ship, test, and harden like a small team.</p>
-        <p class="meta">Contact: <a href="mailto:adjrodriguez94@gmail.com">adjrodriguez94@gmail.com</a> · GitHub <a href="https://github.com/Ace9x">Ace9x</a></p>
-      </div>
-    </section>
+<section id="rigroute"><div class="w">
+<p class="kick rv">RigRoute</p><h2 class="rv">Built for the rig, not the sedan.</h2>
+<div class="bento">
+<div class="card c4 rv"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 17h13V6H3zM16 10h4l1 3v4h-5"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div><h3>Routes sized to your truck</h3><p>Height, weight, length and axles shape every turn. NYC truck routes come first, and you choose whether to switch when a faster way shows up.</p><img class="shot" src="img/truck.webp" width="420" height="908" loading="lazy" alt="RigRoute My Vehicle screen with height, weight and length settings"></div>
+<div class="card c2 light rv"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Hours of service</h3><p>Drive, duty and 70-hour clocks at a glance. A helper only, not a certified ELD.</p><img class="shot" src="img/hos.webp" width="420" height="908" loading="lazy" alt="RigRoute driving hours screen with countdown timers"></div>
+<div class="card c2 rv"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h0"/></svg></div><h3>Hazards, shared live</h3><p>One tap reports low clearance, closures or a stalled vehicle. Other drivers vote still-there or gone.</p><img class="shot" src="img/report.webp" width="420" height="908" loading="lazy" alt="RigRoute hazard report grid"></div>
+<div class="card c2 rv"><div class="ico"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-12 7l-5 1 1-4a8 8 0 1 1 16-4z"/></svg></div><h3>Ask RigRoute</h3><p>An AI helper for the road questions you'd text a friend. Voice turn-by-turn too.</p><img class="shot" src="img/help.webp" width="420" height="908" loading="lazy" alt="RigRoute help sheet with Ask RigRoute box"></div>
+<div class="card c2 rv"><div class="ico"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><h3>Private by default</h3><p>No account needed. Nobody sees your location unless you choose to share it.</p><img class="shot" src="img/route.webp" width="420" height="908" loading="lazy" alt="RigRoute route planning sheet"></div>
+</div></div></section>
 
-    <section>
-      <h2>Company status</h2>
-      <div class="card">
-        <p>Working brand: <strong>Ace Apps</strong>. Legal entity not yet formed; preparing a Delaware C-corp when funding or revenue covers formation. Custom domain ready: add a <code>CNAME</code> file and DNS when the domain is purchased.</p>
-      </div>
-    </section>
+<section id="more" style="background:var(--s1);border-block:1px solid var(--line)"><div class="w">
+<p class="kick rv">Also from Ace Apps</p><h2 class="rv">Real trucking know-how, run like a modern office.</h2>
+<div class="bento">
+<div class="card c3 light rv"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h7"/><circle cx="18" cy="16" r="3"/></svg></div><h3>Dispatch service</h3><p>Load finding, rate negotiation, scheduling and paperwork for owner-operators and small fleets, from a dispatcher who has saved and won contracts.</p><p style="margin-top:18px"><a class="btn sm" style="background:#000;color:#fff" href="mailto:adjrodriguez94@gmail.com?subject=Dispatch%20service">Get dispatched →</a></p></div>
+<div class="card c3 rv" id="office"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="12" rx="3"/><path d="M12 3v4M9 12h0M15 12h0M9 16h6"/></svg></div><h3>The AI-run office</h3><p>A team of AI agents handles QA, security checks, research and ops, so one founder ships like a small team and the business pays its own way.</p></div>
+<div class="card c6 rv" style="grid-column:1/-1;display:grid;gap:20px;align-items:center;grid-template-columns:1fr minmax(0,180px)"><div><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 20V10M9 20V4M15 20v-7M21 20V8"/></svg></div><h3>EdgePro</h3><p>A sports research desk: live scores, odds context and a disciplined grading system for every pick. Research tools, not a sportsbook.</p></div><img src="img/edge.webp" width="420" height="917" loading="lazy" alt="EdgePro scoreboard screen" style="border-radius:20px;border:5px solid #1c1c1e"></div>
+</div>
+<div class="strip rv" aria-label="More RigRoute screens"><img src="img/route.webp" width="420" height="908" loading="lazy" alt="Route sheet"><img src="img/report.webp" width="420" height="908" loading="lazy" alt="Hazard report"><img src="img/hos.webp" width="420" height="908" loading="lazy" alt="Hours of service"><img src="img/truck.webp" width="420" height="908" loading="lazy" alt="Vehicle profile"><img src="img/help.webp" width="420" height="908" loading="lazy" alt="Help"></div>
+</div></section>
 
-    <footer>
-      <div>© <span id="y"></span> Ace Apps · Far Rockaway, NY · <a href="mailto:adjrodriguez94@gmail.com">adjrodriguez94@gmail.com</a></div>
-      <div class="meta">This page is hosted on GitHub Pages and is ready for a custom domain.</div>
-    </footer>
-  </div>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-</body>
-</html>
+<section><div class="w"><div class="foot-cta rv">
+<h2>Let's move freight smarter.</h2>
+<p>Drivers, fleets, partners and investors: reach the founder directly.</p>
+<div class="cta" style="margin:0"><a class="btn" style="background:#000;color:#fff" href="mailto:adjrodriguez94@gmail.com">adjrodriguez94@gmail.com</a><a class="btn" style="background:#f3f3f3;color:#000" href="https://ace9x.github.io/truckers-gps/">Try RigRoute</a></div>
+</div></div></section>
+</main>
+<footer><div class="w">© 2026 Ace Apps · Far Rockaway, Queens, NY · RigRoute's HOS helper is informational, not a certified ELD.</div></footer>
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body></html>
