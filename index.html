@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ace Apps — RigRoute, Dispatch and EdgePro</title>
-<meta name="description" content="Ace Apps builds RigRoute, a free truck-safe GPS, runs a Dispatch service for owner-operators, and makes EdgePro, a sports research desk.">
+<title>Ace Apps — RigRoute, Dispatch, Car Service app and EdgePro</title>
+<meta name="description" content="Ace Apps builds RigRoute, a free truck-safe GPS, runs a Dispatch service for owner-operators, licenses a white-label car service app to livery bases, and makes EdgePro, a sports research desk.">
 <meta name="theme-color" content="#000000">
 <link rel="preload" href="img/map.webp" as="image">
 <style>
@@ -22,7 +22,8 @@ nav .w{display:flex;align-items:center;justify-content:space-between;height:64px
 .logo{font-weight:800;font-size:20px;letter-spacing:-.02em;text-decoration:none}.logo b{color:var(--ac)}
 nav ul{display:flex;gap:22px;list-style:none;padding:0}nav ul a{text-decoration:none;color:var(--mu);font-weight:500}nav ul a:hover{color:#fff}
 @media(max-width:720px){nav ul li:last-child{display:none}nav ul{gap:14px;font-size:14px}.logo{font-size:18px}}
-@media(max-width:360px){nav ul{gap:10px;font-size:13px}.w{padding:0 16px}.phone .sheet{left:-6px;right:-6px}}
+@media(max-width:400px){.lg{display:none}}
+@media(max-width:360px){nav ul{gap:9px;font-size:13px}.logo{font-size:16px}.w{padding:0 16px}.phone .sheet{left:-6px;right:-6px}}
 .btn{display:inline-flex;align-items:center;gap:8px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .2s,background .2s}
 .btn:hover{transform:translateY(-2px)}.b1{background:#fff;color:#000}.b2{background:var(--s2);color:#fff;border:1px solid var(--line)}.sm{min-height:40px;padding:0 18px;font-size:14px}
 a:focus-visible,.btn:focus-visible{outline:3px solid var(--ac);outline-offset:3px}
@@ -86,19 +87,21 @@ footer{padding:36px 0 60px;color:var(--mu);font-size:14px}
 .step b{display:block}.step span{color:var(--mu);font-size:14px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.chips a{padding:8px 14px;border-radius:999px;background:var(--s2);border:1px solid var(--line);text-decoration:none;font-weight:600;font-size:14px}
 .cbtn{background:var(--c);color:#000}
-</style>
+.fan{display:flex;justify-content:center;align-items:flex-end;gap:0}.fan .ph2{max-width:200px;padding:6px;border-radius:30px}.fan .ph2 img{border-radius:24px}.fan .ph2:nth-child(1){transform:rotate(-6deg) translateX(22px)}.fan .ph2:nth-child(2){z-index:2;max-width:230px;margin-bottom:24px}.fan .ph2:nth-child(3){transform:rotate(6deg) translateX(-22px)}
+@media(max-width:420px){.fan .ph2{max-width:130px}.fan .ph2:nth-child(2){max-width:150px}}
+.fan figcaption{display:none}</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <nav aria-label="Main"><div class="w"><a class="logo" href="#top">Ace<b>.</b>Apps</a>
-<ul class="pnav"><li><a href="#rigroute">RigRoute</a></li><li><a href="#dispatch">Dispatch</a></li><li><a href="#edgepro">EdgePro</a></li><li><a class="btn b1 sm" href="mailto:adjrodriguez94@gmail.com">Contact</a></li></ul></div></nav>
+<ul class="pnav"><li><a href="#rigroute">RigRoute</a></li><li><a href="#dispatch">Dispatch</a></li><li><a href="#carservice">Car<span class="lg"> Service</span></a></li><li><a href="#edgepro">EdgePro</a></li><li><a class="btn b1 sm" href="mailto:adjrodriguez94@gmail.com">Contact</a></li></ul></div></nav>
 <main id="main">
 <header class="hero" id="top"><div class="w">
 <div>
 <span class="tag"><span class="dot" aria-hidden="true"></span>Ace Apps · Queens, NY</span>
-<h1>Three tools. One <em>edge.</em></h1>
-<p class="lead">Ace Apps builds <b style="color:#fff">RigRoute</b>, a free truck-safe GPS, runs a hands-on <b style="color:#fff">Dispatch</b> service for owner-operators, and makes <b style="color:#fff">EdgePro</b>, a sports research desk.</p>
-<div class="chips"><a href="#rigroute">🚚 RigRoute</a><a href="#dispatch">📋 Dispatch</a><a href="#edgepro">📊 EdgePro</a></div>
+<h1>Four products. One <em>edge.</em></h1>
+<p class="lead">Ace Apps builds <b style="color:#fff">RigRoute</b>, a free truck-safe GPS, runs a hands-on <b style="color:#fff">Dispatch</b> service for owner-operators, licenses a <b style="color:#fff">branded car service app</b> to livery bases, and makes <b style="color:#fff">EdgePro</b>, a sports research desk.</p>
+<div class="chips"><a href="#rigroute">🚚 RigRoute</a><a href="#dispatch">📋 Dispatch</a><a href="#carservice">🚘 Car Service</a><a href="#edgepro">📊 EdgePro</a></div>
 <div class="cta"><a class="btn b1" href="https://ace9x.github.io/truckers-gps/">Open RigRoute →</a><a class="btn b2" href="mailto:adjrodriguez94@gmail.com">Talk to the founder</a></div>
 </div>
 <div class="phone"><img src="img/map.webp" width="560" height="1211" alt="RigRoute map screen at night showing truck routes across New York City">
@@ -129,8 +132,21 @@ footer{padding:36px 0 60px;color:var(--mu);font-size:14px}
 </div></div>
 </div></section>
 
-<section class="proj" id="edgepro" style="--c:#8b7cff;--g:rgba(139,124,255,.4)"><div class="w pg">
-<div><p class="kick rv">03 · EdgePro · In development</p><h2 class="rv">Sports research with discipline built in.</h2>
+<section class="proj" id="carservice" style="--c:#e6b94c;--g:rgba(230,185,76,.38)"><div class="w pg">
+<div><p class="kick rv">03 · Car Service app · White-label</p><h2 class="rv">Your base's own branded app.</h2>
+<p class="vp rv">Rider app, driver app and dispatch console under your base's name and colors, with upfront fares and real human dispatch.</p>
+<ul class="feat rv"><li>Rider app: GPS pickup, upfront locked fare, live car on the map, ride PIN, receipts and ratings</li><li>Driver app: ride offers with fare and $/mile before accepting, turn-by-turn navigation, airport queues, earnings</li><li>Dispatch console: live driver map, trip queue, one-tap assign and phone bookings</li><li>Your fares and rules: flat airport rates, no-surge option, English and Spanish, installs from the browser</li></ul>
+<p class="who rv"><b>For:</b> car service and livery bases that want their own app instead of a marketplace. Launch client: <b>Rocapulco Supreme</b>, Far Rockaway, Queens.</p>
+<div class="cta rv"><a class="btn cbtn" href="https://ace9x.github.io/rocapulco-supreme-web/">See the live demo →</a><a class="btn b2" href="mailto:adjrodriguez94@gmail.com?subject=Branded%20app%20for%20my%20base">Get one for your base</a></div></div>
+<div class="vis rv"><div class="fan">
+<div class="ph2"><img src="img/rocap-rider.webp" width="420" height="908" loading="lazy" alt="Rocapulco Supreme rider app home screen with Book a ride button"></div>
+<div class="ph2"><img src="img/rocap-dispatch.webp" width="420" height="908" loading="lazy" alt="Rocapulco Dispatch Center with ride queue and assign buttons"></div>
+<div class="ph2"><img src="img/rocap-driver.webp" width="420" height="908" loading="lazy" alt="Driver app showing JFK queue position and shift checklist"></div>
+</div></div>
+</div></section>
+
+<section class="proj flip" id="edgepro" style="--c:#8b7cff;--g:rgba(139,124,255,.4)"><div class="w pg">
+<div><p class="kick rv">04 · EdgePro · In development</p><h2 class="rv">Sports research with discipline built in.</h2>
 <p class="vp rv">Live scores, odds context and a strict grade on every pick, in one fast screen.</p>
 <ul class="feat rv"><li>Live scores across MLB, NFL, NBA, NHL, WNBA, college and soccer</li><li>Odds context from public market data</li><li>Desk grade: a written, repeatable grading system for every pick</li><li>Bet tracker and record, so results are honest</li></ul>
 <p class="who rv"><b>For:</b> adults 21+ who research sports. Research tools only, not a sportsbook. EdgePro never takes bets. Gambling problem? Call 1-800-GAMBLER.</p>
