@@ -89,7 +89,10 @@ footer{padding:36px 0 60px;color:var(--mu);font-size:14px}
 .cbtn{background:var(--c);color:#000}
 .fan{display:flex;justify-content:center;align-items:flex-end;gap:0}.fan .ph2{max-width:200px;padding:6px;border-radius:30px}.fan .ph2 img{border-radius:24px}.fan .ph2:nth-child(1){transform:rotate(-6deg) translateX(22px)}.fan .ph2:nth-child(2){z-index:2;max-width:230px;margin-bottom:24px}.fan .ph2:nth-child(3){transform:rotate(6deg) translateX(-22px)}
 @media(max-width:420px){.fan .ph2{max-width:130px}.fan .ph2:nth-child(2){max-width:150px}}
-.fan figcaption{display:none}</style>
+.fan figcaption{display:none}.bd{margin-top:36px;border:1px solid var(--line);border-radius:20px;background:rgba(15,15,16,.8)}.bd summary{cursor:pointer;padding:18px 22px;font-weight:700;color:var(--c,#06c167);list-style-position:inside}.bd summary:focus-visible{outline:3px solid var(--ac);outline-offset:2px;border-radius:20px}.bdg{display:grid;gap:24px;padding:0 22px 22px}@media(min-width:900px){.bdg{grid-template-columns:1fr 1fr 1fr}}.bd h4{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#fff;margin:14px 0 6px}.bd p,.bd li{color:var(--mu);font-size:15px}.bd ul{padding-left:18px;display:grid;gap:6px}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:32px}.vc{background:var(--s1);border:1px solid var(--line);border-radius:18px;padding:18px;text-decoration:none;display:grid;gap:4px;transition:border-color .3s}.vc:hover{border-color:var(--ac)}.vc span{font-size:12px;color:var(--ac);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.tr{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:20px}.tr p{background:var(--s1);padding:16px 18px;color:#d7d7db;font-size:15px}
+.agrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px;margin-top:36px}</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -108,6 +111,10 @@ footer{padding:36px 0 60px;color:var(--mu);font-size:14px}
 <div class="sheet" role="presentation"><small>Routing for Semi · 13′6″ · 80,000 lb</small><div class="row"><strong>Truck-safe route ready</strong><span class="go">Start</span></div></div></div>
 </div></header>
 
+<section id="vision"><div class="w"><p class="kick rv">Our vision</p><h2 class="rv">Tools for drivers and transport businesses, run by AI.</h2>
+<p class="vp rv" style="max-width:46em">Tools for drivers and transport businesses, run by AI. RigRoute keeps truck drivers on safe roads for free. The Dispatch service finds those drivers paying loads. The Car Service app gives livery bases their own branded rider, driver and dispatch apps. EdgePro applies the same research discipline to sports data. One founder ships and tests all of it with an AI-run operations team, and the business pays for itself before it spends.</p>
+<div class="vgrid rv"><a class="vc" href="#rigroute"><span>Live</span><b>RigRoute</b></a><a class="vc" href="#dispatch"><span>Operating</span><b>Dispatch service</b></a><a class="vc" href="#carservice"><span>Live demo</span><b>Car Service app (white-label)</b></a><a class="vc" href="#edgepro"><span>In development</span><b>EdgePro</b></a><a class="vc" href="#office"><span>Running</span><b>AI-run office</b></a></div>
+<div class="tr rv"><p>41 unique RigRoute devices on the first day of analytics (Nov 4, 2026)</p><p>48 questions asked to Ask RigRoute</p><p>4 products built; RigRoute live, car service app live as a demo</p><p>$0 raised; $0 product revenue; no paid ads</p></div></div></section>
 <section class="proj" id="rigroute" style="--c:#06c167;--g:rgba(6,193,103,.4)"><div class="w pg">
 <div><p class="kick rv">01 · RigRoute · Live</p><h2 class="rv">The GPS that knows you're driving a truck.</h2>
 <p class="vp rv">Truck-safe routes around low bridges, tight turns and no-truck streets, free in your phone's browser.</p>
@@ -116,7 +123,10 @@ footer{padding:36px 0 60px;color:var(--mu);font-size:14px}
 <p class="who rv" style="border-color:#444"><b>Day one (Nov 4, 2026, our analytics):</b> 41 devices · 48 questions asked</p>
 <div class="cta rv"><a class="btn cbtn" href="https://ace9x.github.io/truckers-gps/">Start driving free →</a></div></div>
 <div class="vis rv"><div class="ph2"><img src="img/route.webp" width="420" height="908" loading="lazy" alt="RigRoute route planning sheet"></div></div>
-</div></section>
+</div><div class="w"><details class="bd rv"><summary>Full breakdown: RigRoute</summary><div class="bdg">
+<div><h4>Problem</h4><p>Consumer GPS routes a 53-foot rig like a sedan: into low bridges, tight turns and no-truck streets. Truck tools are often paid, account-walled or bundled with heavy ELD suites.</p><h4>Who it's for</h4><p>Truck drivers, owner-operators and small fleets, starting in NYC and the Northeast.</p><h4>How it makes money</h4><p>Free for drivers. Planned: optional fleet/dispatcher pro tools (pricing not set).</p></div>
+<div><h4>How it works</h4><ul><li>Truck profile (height, weight, length, axles) shapes every route; NYC truck routes first</li><li>Look-ahead danger checks against OpenStreetMap height, weight and hazmat limits, with spoken warnings and reroute</li><li>Shared guest hazards with still-there/gone votes; hours-of-service helper (not an ELD)</li><li>Ask RigRoute AI help, capped at 20 questions per device per day; works in the phone browser, no account</li></ul></div>
+<div><h4>Live today</h4><p>Live at ace9x.github.io/truckers-gps. Guest-only, free. 41 unique devices and 48 Ask RigRoute questions on the first day of analytics (Nov 4, 2026).</p><h4>Next (planned, no dates promised)</h4><ul><li>Optional pro tools for fleets and dispatchers once driver density justifies it</li><li>Self-hosted routing and map data for fleet-scale reliability</li><li>Metro-by-metro growth with opt-in area stats</li></ul></div></div></details></div></section>
 
 <section class="proj flip" id="dispatch" style="--c:#ffb020;--g:rgba(255,176,32,.35)"><div class="w pg">
 <div><p class="kick rv">02 · Dispatch · Service</p><h2 class="rv">Your dispatcher, from someone who's done it.</h2>
@@ -130,7 +140,10 @@ footer{padding:36px 0 60px;color:var(--mu);font-size:14px}
 <div class="step"><i>3</i><div><b>You approve, we book</b><span>Rate con, pickup and delivery appointments</span></div></div>
 <div class="step"><i>4</i><div><b>Deliver, we bill</b><span>POD and invoice sent, paperwork filed</span></div></div>
 </div></div>
-</div></section>
+</div><div class="w"><details class="bd rv"><summary>Full breakdown: Dispatch service</summary><div class="bdg">
+<div><h4>Problem</h4><p>Owner-operators lose hours and margin finding loads, negotiating rates and chasing paperwork instead of driving.</p><h4>Who it's for</h4><p>Owner-operators and small fleets.</p><h4>How it makes money</h4><p>Dispatch fee per load. Market standard is 5–10% of linehaul (2026 market research); our rate is set per client. Revenue to date not stated.</p></div>
+<div><h4>How it works</h4><ul><li>Load finding matched to the driver&#x27;s lanes, equipment and schedule</li><li>Rate negotiation with brokers and shippers</li><li>Booking, appointments and daily schedules</li><li>Rate cons, BOLs, proof of delivery and invoicing</li></ul></div>
+<div><h4>Live today</h4><p>Run by Fan, a working dispatcher (Mitchell&#x27;s Logistics) who has saved and won trucking contracts.</p><h4>Next (planned, no dates promised)</h4><ul><li>Sign the first owner-operator dispatch clients</li><li>Productize dispatch workflows on top of the RigRoute driver network</li></ul></div></div></details></div></section>
 
 <section class="proj" id="carservice" style="--c:#e6b94c;--g:rgba(230,185,76,.38)"><div class="w pg">
 <div><p class="kick rv">03 · Car Service app · White-label</p><h2 class="rv">Your base's own branded app.</h2>
@@ -143,7 +156,10 @@ footer{padding:36px 0 60px;color:var(--mu);font-size:14px}
 <div class="ph2"><img src="img/rocap-dispatch.webp" width="420" height="908" loading="lazy" alt="Rocapulco Dispatch Center with ride queue and assign buttons"></div>
 <div class="ph2"><img src="img/rocap-driver.webp" width="420" height="908" loading="lazy" alt="Driver app showing JFK queue position and shift checklist"></div>
 </div></div>
-</div></section>
+</div><div class="w"><details class="bd rv"><summary>Full breakdown: Car Service app (white-label)</summary><div class="bdg">
+<div><h4>Problem</h4><p>Local car service and livery bases compete with big ride-hail apps but have no app of their own, so riders call or drift to marketplaces with surprise fares.</p><h4>Who it's for</h4><p>Car service and livery bases that want their own branded app. Launch client: Rocapulco Supreme, Far Rockaway, Queens.</p><h4>How it makes money</h4><p>License the app to bases. Pricing not set yet.</p></div>
+<div><h4>How it works</h4><ul><li>Rider app: GPS pickup, upfront locked fare with itemized breakdown, live car on map, ride PIN, chat, receipts and ratings</li><li>Driver app: offers with fare and $/mile before accepting, turn-by-turn navigation, airport queues, earnings, no acceptance-rate penalty</li><li>Dispatch console: live driver map, trip queue, one-tap assign, phone bookings, automatic reassignment</li><li>Base&#x27;s own name, colors and fares: flat airport rates, optional capped busy-time pricing, English and Spanish, installs from the browser</li></ul></div>
+<div><h4>Live today</h4><p>Live demo at ace9x.github.io/rocapulco-supreme-web with rider, driver and dispatch views and clearly labeled demo drivers.</p><h4>Next (planned, no dates promised)</h4><ul><li>Production backend (Supabase phone sign-in and database; adapter built, not yet tested)</li><li>Private real-time server for live operations instead of public relays</li><li>TLC advertising and base-license display for NYC bases</li></ul></div></div></details></div></section>
 
 <section class="proj flip" id="edgepro" style="--c:#8b7cff;--g:rgba(139,124,255,.4)"><div class="w pg">
 <div><p class="kick rv">04 · EdgePro · In development</p><h2 class="rv">Sports research with discipline built in.</h2>
@@ -152,8 +168,18 @@ footer{padding:36px 0 60px;color:var(--mu);font-size:14px}
 <p class="who rv"><b>For:</b> adults 21+ who research sports. Research tools only, not a sportsbook. EdgePro never takes bets. Gambling problem? Call 1-800-GAMBLER.</p>
 <div class="cta rv"><a class="btn cbtn" href="mailto:adjrodriguez94@gmail.com?subject=EdgePro%20early%20access">Request early access →</a></div></div>
 <div class="vis rv"><div class="ph2"><img src="img/edge.webp" width="420" height="917" loading="lazy" alt="EdgePro live scoreboard screen with NBA games"></div></div>
-</div></section>
+</div><div class="w"><details class="bd rv"><summary>Full breakdown: EdgePro</summary><div class="bdg">
+<div><h4>Problem</h4><p>Sports bettors track picks across scattered apps and spreadsheets, and rarely grade themselves honestly.</p><h4>Who it's for</h4><p>Adults 21+ who research sports. Research tools only, not a sportsbook.</p><h4>How it makes money</h4><p>Not stated yet.</p></div>
+<div><h4>How it works</h4><ul><li>Live scores across MLB, NFL, NBA, NHL, WNBA, college and soccer</li><li>Odds context from public market data</li><li>Written, repeatable grade on every pick</li><li>Bet tracker and record</li></ul></div>
+<div><h4>Live today</h4><p>Working web build used inside the Ace Apps office; not publicly launched.</p><h4>Next (planned, no dates promised)</h4><ul><li>Automatic closing-line-value grading</li><li>Public beta</li></ul></div></div></details></div></section>
 
+<section class="proj" id="office" style="--c:#5ac8fa;--g:rgba(90,200,250,.3)"><div class="w"><p class="kick rv">05 · AI-run office · Running</p><h2 class="rv">One founder. An AI operations team.</h2>
+<p class="vp rv">Fan Rodriguez, founder (Far Rockaway, Queens). Dispatcher at Mitchell&#x27;s Logistics; at a trucking company he helped save and win contracts and built daily schedules; T-Mobile tech sales (2017–2021); telemarketing operations manager (2021–2024). He runs an AI-run operations team so one founder ships and tests like a small team.</p><details class="bd rv"><summary>Full breakdown: AI-run office</summary><div class="bdg">
+<div><h4>Problem</h4><p>A solo founder can&#x27;t hire QA, security, research and ops staff before revenue.</p><h4>Who it's for</h4><p>Internal: how Ace Apps builds and runs all four products.</p><h4>How it makes money</h4><p>Internal cost saver, not sold.</p></div>
+<div><h4>How it works</h4><ul><li>Specialized Grok Bot agents for building, QA, security checks, research and ops</li><li>Release gate: phone-width tap-throughs, real routes, offline checks, zero console errors</li><li>Every claim backed by a test, source or check</li><li>Free tiers until revenue covers paid tools</li></ul></div>
+<div><h4>Live today</h4><p>Running today across all products.</p><h4>Next (planned, no dates promised)</h4><ul><li>Add paid tools only when revenue covers them</li></ul></div></div></details></div></section>
+<section id="asks"><div class="w"><p class="kick rv">What we're looking for</p><h2 class="rv">Here's how you can help.</h2>
+<div class="agrid"><div class="card rv"><h3>Funding and accelerators</h3><p>Techstars Anywhere (applying by Nov 18, 2026), Grok for Startups / xAI credits, and small-business grants.</p><p style="margin-top:16px"><a class="btn b1 sm" href="mailto:adjrodriguez94@gmail.com?subject=Funding%20%2F%20accelerator">Email us →</a></p></div><div class="card rv"><h3>Car service bases</h3><p>Bases that want their own branded rider, driver and dispatch app.</p><p style="margin-top:16px"><a class="btn b1 sm" href="mailto:adjrodriguez94@gmail.com?subject=Branded%20app%20for%20my%20base">Email us →</a></p></div><div class="card rv"><h3>Truck drivers</h3><p>Drivers and owner-operators to use RigRoute free and tell us what to fix.</p><p style="margin-top:16px"><a class="btn b1 sm" href="mailto:adjrodriguez94@gmail.com?subject=RigRoute%20driver%20feedback">Email us →</a></p></div><div class="card rv"><h3>Carriers for dispatch</h3><p>Owner-operators and small fleets who want a dispatcher.</p><p style="margin-top:16px"><a class="btn b1 sm" href="mailto:adjrodriguez94@gmail.com?subject=Dispatch%20service">Email us →</a></p></div><div class="card rv"><h3>Partners and advisors</h3><p>People in trucking, livery, mobility or startups who can open doors or advise.</p><p style="margin-top:16px"><a class="btn b1 sm" href="mailto:adjrodriguez94@gmail.com?subject=Partner%20%2F%20advisor">Email us →</a></p></div><div class="card rv"><h3>Beta testers</h3><p>Testers for the car service app and EdgePro.</p><p style="margin-top:16px"><a class="btn b1 sm" href="mailto:adjrodriguez94@gmail.com?subject=Beta%20tester">Email us →</a></p></div></div></div></section>
 <section><div class="w"><div class="foot-cta rv">
 <h2>Let's build the edge together.</h2>
 <p>Drivers, fleets, partners and investors: reach the founder directly.</p>
