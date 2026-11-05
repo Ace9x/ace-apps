@@ -27,7 +27,7 @@ nav ul{display:flex;gap:22px;list-style:none;padding:0}nav ul a{text-decoration:
 .btn:hover{transform:translateY(-2px)}.b1{background:#fff;color:#000}.b2{background:var(--s2);color:#fff;border:1px solid var(--line)}.sm{min-height:40px;padding:0 18px;font-size:14px}
 a:focus-visible,.btn:focus-visible{outline:3px solid var(--ac);outline-offset:3px}
 .hero{padding:56px 0 40px;overflow:hidden;position:relative;isolation:isolate}
-.hero:before{content:"";position:absolute;inset:-20% -10% auto;height:120%;z-index:-1;background:radial-gradient(40% 50% at 75% 40%,rgba(6,193,103,.45),transparent 70%),radial-gradient(35% 45% at 20% 10%,rgba(255,176,32,.28),transparent 70%);filter:blur(10px);animation:drift 14s ease-in-out infinite alternate}
+.hero:before{content:"";position:absolute;top:-120px;left:-10%;right:-10%;height:900px;z-index:-1;background:radial-gradient(40% 50% at 75% 40%,rgba(6,193,103,.45),transparent 70%),radial-gradient(35% 45% at 20% 10%,rgba(255,176,32,.28),transparent 70%);filter:blur(10px);animation:drift 14s ease-in-out infinite alternate}
 @keyframes drift{to{transform:translate3d(-4%,3%,0) scale(1.08)}}
 .hero .w{display:grid;gap:40px;align-items:center}
 @media(min-width:900px){.hero .w{grid-template-columns:1.15fr .85fr}.hero{padding:96px 0 72px}}
